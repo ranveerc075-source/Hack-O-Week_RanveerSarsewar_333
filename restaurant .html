@@ -1,0 +1,185 @@
+restaurant menu rv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Restaurant Menu</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+header{
+    background:#e74c3c;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+}
+
+.menu-category{
+    background:white;
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    margin:8px 0;
+}
+
+button{
+    background:#27ae60;
+    color:white;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+button:hover{
+    background:#219150;
+}
+
+.order-box{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+}
+
+.total{
+    font-size:20px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.place-order{
+    margin-top:10px;
+    background:#e74c3c;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Local Restaurant</h1>
+<p>Delicious Food Menu</p>
+</header>
+
+<div class="container">
+
+<!-- STARTERS -->
+<div class="menu-category">
+<h2>Starters</h2>
+
+<div class="menu-item">
+<span>Veg Spring Roll - ₹120</span>
+<button onclick="addItem('Veg Spring Roll',120)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Paneer Tikka - ₹180</span>
+<button onclick="addItem('Paneer Tikka',180)">Add</button>
+</div>
+
+</div>
+
+<!-- MAIN COURSE -->
+<div class="menu-category">
+<h2>Main Course</h2>
+
+<div class="menu-item">
+<span>Butter Paneer - ₹250</span>
+<button onclick="addItem('Butter Paneer',250)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Veg Biryani - ₹220</span>
+<button onclick="addItem('Veg Biryani',220)">Add</button>
+</div>
+
+</div>
+
+<!-- BEVERAGES -->
+<div class="menu-category">
+<h2>Beverages</h2>
+
+<div class="menu-item">
+<span>Cold Coffee - ₹120</span>
+<button onclick="addItem('Cold Coffee',120)">Add</button>
+</div>
+
+<div class="menu-item">
+<span>Lassi - ₹80</span>
+<button onclick="addItem('Lassi',80)">Add</button>
+</div>
+
+</div>
+
+<!-- ORDER SECTION -->
+<div class="order-box">
+<h2>Your Order</h2>
+
+<ul id="orderList"></ul>
+
+<div class="total">
+Total: ₹<span id="total">0</span>
+</div>
+
+<button class="place-order" onclick="placeOrder()">Place Order</button>
+
+</div>
+
+</div>
+
+<script>
+
+let total = 0;
+
+function addItem(name,price){
+
+let orderList = document.getElementById("orderList");
+
+let li = document.createElement("li");
+li.textContent = name + " - ₹" + price;
+
+orderList.appendChild(li);
+
+total += price;
+
+document.getElementById("total").textContent = total;
+
+}
+
+function placeOrder(){
+
+if(total === 0){
+alert("Please add items to your order.");
+return;
+}
+
+alert("Order placed successfully! Total Bill: ₹" + total);
+
+document.getElementById("orderList").innerHTML = "";
+document.getElementById("total").textContent = 0;
+total = 0;
+
+}
+
+</script>
+
+</body>
+</html>

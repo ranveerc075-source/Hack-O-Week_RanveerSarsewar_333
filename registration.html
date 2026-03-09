@@ -1,0 +1,122 @@
+registration form
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Tech Fest Registration</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+.container{
+    width:500px;
+    margin:40px auto;
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:10px;
+}
+
+h1{
+    text-align:center;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+label{
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Tech Fest 2026 Registration</h1>
+
+<form>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number" required>
+
+<label>College Name</label>
+<input type="text" placeholder="Enter college name" required>
+
+<label>Course / Department</label>
+<input type="text" placeholder="Eg: BCA / Computer Science">
+
+<label>Year</label>
+<select>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+
+<label>Select Event</label>
+<select>
+<option>Coding Challenge</option>
+<option>Hackathon</option>
+<option>AI Workshop</option>
+<option>Robotics Competition</option>
+<option>Gaming Tournament</option>
+</select>
+
+<label>Team Size</label>
+<select>
+<option>Individual</option>
+<option>2 Members</option>
+<option>3 Members</option>
+<option>4 Members</option>
+</select>
+
+<label>Payment Mode</label>
+<select>
+<option>UPI</option>
+<option>Credit/Debit Card</option>
+<option>Net Banking</option>
+<option>Pay at Venue</option>
+</select>
+
+<label>Additional Message</label>
+<textarea placeholder="Any query or note..."></textarea>
+
+<button type="submit">Register Now</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
